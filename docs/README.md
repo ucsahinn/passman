@@ -1,6 +1,6 @@
 # PassMan Documentation
 
-This directory contains public-safe operator documentation for PassMan Enterprise Vault Console.
+Public-safe operator documentation for PassMan Enterprise Vault Console.
 
 ## Start Here
 
@@ -13,6 +13,7 @@ This directory contains public-safe operator documentation for PassMan Enterpris
 
 | Guide | Purpose |
 | --- | --- |
+| `overview.md` | Product map, runtime model and recommended reading path. |
 | `install-windows-server.md` | MSI install, service state, port, logs and initial validation. |
 | `first-run-owner-license.md` | First owner profile, license activation and first-run checks. |
 | `public-host-https-certificate.md` | Hostname, HTTPS and certificate setup. |
@@ -27,8 +28,8 @@ This directory contains public-safe operator documentation for PassMan Enterpris
 
 ## Related Public Surfaces
 
-- [Product and release hub](../index.html)
-- [Knowledge base](../kb/index.html)
+- [Repository home](../README.md)
+- [Knowledge base](../kb/README.md)
 - [Release notes](../RELEASES.md)
 - [Security policy](../SECURITY.md)
 - [Support policy](../SUPPORT.md)

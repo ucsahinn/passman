@@ -1,48 +1,90 @@
-# PassMan Enterprise Vault Console
+<p align="center">
+  <img src="assets/visuals/social-preview.svg" alt="PassMan Enterprise Vault Console" width="100%">
+</p>
 
-Public release, documentation and knowledge-base hub for PassMan.
+<h1 align="center">PassMan Enterprise Vault Console</h1>
 
-PassMan is a self-hosted, zero-knowledge enterprise password and secrets vault for Windows Server. It is installed with an MSI, runs on the customer's own Windows server, and is accessed from browsers through the server IP or DNS name.
+<p align="center">
+  <strong>Self-hosted, zero-knowledge secrets vault for Windows Server operations.</strong>
+</p>
 
-This repository is intentionally public. It contains product documentation, knowledge-base articles, release notes and links to GitHub Release downloads. The product source code, signing workflow, license issuer material and private build history remain private.
+<p align="center">
+  <a href="https://github.com/ucsahinn/passman-releases/releases/latest"><strong>Latest Release</strong></a>
+  ·
+  <a href="docs/README.md"><strong>Documentation</strong></a>
+  ·
+  <a href="kb/README.md"><strong>Knowledge Base</strong></a>
+  ·
+  <a href="SECURITY.md"><strong>Security</strong></a>
+  ·
+  <a href="SUPPORT.md"><strong>Support</strong></a>
+</p>
 
-## Public Hub
+<p align="center">
+  <code>Current stable: 1.5.3</code>
+  &nbsp;
+  <code>Server: Windows MSI</code>
+  &nbsp;
+  <code>Docs: TR + EN</code>
+  &nbsp;
+  <code>Source: private</code>
+</p>
 
-| Surface | Link |
-| --- | --- |
-| GitHub Pages hub | https://ucsahinn.github.io/passman-releases/ |
-| Documentation index | https://ucsahinn.github.io/passman-releases/docs/ |
-| Knowledge base | https://ucsahinn.github.io/passman-releases/kb/ |
-| Latest GitHub Release | https://github.com/ucsahinn/passman-releases/releases/latest |
+---
 
-GitHub Pages is deployed from `.github/workflows/pages.yml`. Pages should be configured to build with GitHub Actions. If automatic enablement is required, configure `PASSMAN_PAGES_ADMIN_TOKEN` as a repository secret with Pages administration rights.
+## What This Repository Is
+
+This is the public release, documentation and support repository for PassMan. It is designed to be read directly on GitHub by administrators, security operators and licensed customers.
+
+The product source code, signing workflow, license issuer material and private build history remain private. This repository contains only customer-safe documentation, release notes, diagrams and links to GitHub Release assets.
 
 ## Current Stable Release
 
-**PassMan Enterprise Vault Console 1.5.3**
-
-| Asset | Link |
+| Asset | Purpose |
 | --- | --- |
-| Windows MSI | https://github.com/ucsahinn/passman-releases/releases/latest/download/PassMan-1.5.3-x64.msi |
-| Signed update manifest | https://github.com/ucsahinn/passman-releases/releases/latest/download/passman-update.json |
-| Chromium extension ZIP | https://github.com/ucsahinn/passman-releases/releases/latest/download/passman-chromium-extension.zip |
-| Offline Share Decrypter ZIP | https://github.com/ucsahinn/passman-releases/releases/latest/download/passman-share-decrypter.zip |
-| PassMan DC Agent installer | https://github.com/ucsahinn/passman-releases/releases/latest/download/passman-ad-agent.ps1 |
+| [PassMan-1.5.3-x64.msi](https://github.com/ucsahinn/passman-releases/releases/latest/download/PassMan-1.5.3-x64.msi) | Installs or upgrades PassMan Server on Windows. |
+| [passman-update.json](https://github.com/ucsahinn/passman-releases/releases/latest/download/passman-update.json) | Signed update manifest verified by PassMan. |
+| [passman-chromium-extension.zip](https://github.com/ucsahinn/passman-releases/releases/latest/download/passman-chromium-extension.zip) | Browser extension fallback package. |
+| [passman-share-decrypter.zip](https://github.com/ucsahinn/passman-releases/releases/latest/download/passman-share-decrypter.zip) | Offline external-share opening tool. |
+| [passman-ad-agent.ps1](https://github.com/ucsahinn/passman-releases/releases/latest/download/passman-ad-agent.ps1) | PassMan DC Agent Service installer script. |
 
-## Component Versions
+> Installers, ZIP packages, PowerShell scripts and signed manifests are published through GitHub Releases. They are not stored in the git tree.
 
-| Component | Version | Delivery |
-| --- | ---: | --- |
-| PassMan Enterprise Vault Console | 1.5.3 | Windows MSI |
-| Chromium browser extension | 3.1.8 | Managed rollout or ZIP fallback |
-| Offline Share Decrypter | 1.2.0 | Release ZIP and MSI support component |
-| PassMan DC Agent Service | 1.0.10 | PowerShell service installer and MSI support component |
+## Component Matrix
 
-The Update Center exposes the main MSI and browser extension as actionable update surfaces. Offline Share Decrypter and PassMan DC Agent Service are support components refreshed with the MSI and documented in release notes.
+| Component | Version | Delivery | Operator Outcome |
+| --- | ---: | --- | --- |
+| PassMan Enterprise Vault Console | 1.5.3 | Windows MSI | Self-hosted server runtime, vault console, users, audit, updates. |
+| Chromium Browser Extension | 3.1.8 | Managed rollout or ZIP fallback | Autofill, save/update prompts, active-site record count. |
+| Offline Share Decrypter | 1.2.0 | Release ZIP and MSI support component | Local-only external share opening with expiry and usage limits. |
+| PassMan DC Agent Service | 1.0.10 | Release script and MSI support component | Active Directory sync through a Windows service. |
+
+## Product Capabilities
+
+| Area | Capability |
+| --- | --- |
+| Vault console | Passwords, API keys, credentials, secure notes, certificates and file-backed secrets. |
+| Zero-knowledge model | Secret payloads are encrypted before persistence; unlock material stays in the active browser session. |
+| Security posture | 2FA state, audit-chain state, extension health, license capacity and update status are surfaced as actions. |
+| Sharing | Selected records and files can be packaged for internal or offline external sharing. |
+| Browser extension | Pairing, autofill, save-login prompts, update-login prompts and active-site badge counts. |
+| Directory integration | PassMan DC Agent Service syncs AD scope using redacted service logs and local credential capture. |
+| Operations | Offline licensing, encrypted backups, diagnostics, signed updates and support-safe troubleshooting paths. |
+
+## Recommended Operator Path
+
+1. Install the Windows Server MSI.
+2. Open PassMan through the server IP or DNS name.
+3. Create the owner profile and apply the license.
+4. Configure public host and HTTPS before wider access.
+5. Enable 2FA and verify the audit chain state.
+6. Pair the Chromium extension for approved browsers.
+7. Configure Active Directory sync if needed.
+8. Review backup, restore and update procedures.
 
 ## Documentation
 
-| Area | Turkish | English |
+| Guide | Turkish | English |
 | --- | --- | --- |
 | Overview | [TR](docs/tr/overview.md) | [EN](docs/en/overview.md) |
 | Windows Server installation | [TR](docs/tr/install-windows-server.md) | [EN](docs/en/install-windows-server.md) |
@@ -59,39 +101,48 @@ The Update Center exposes the main MSI and browser extension as actionable updat
 
 ## Knowledge Base
 
-Use the [Knowledge Base](kb/index.html) for fast, public-safe troubleshooting:
+| Incident Path | English | Turkish |
+| --- | --- | --- |
+| MSI installation fails | [EN](kb/en/msi-installation-fails.md) | [TR](kb/tr/msi-installation-fails.md) |
+| Update stays around 76 percent | [EN](kb/en/update-stuck-76.md) | [TR](kb/tr/update-stuck-76.md) |
+| DC Agent service cannot connect | [EN](kb/en/dc-agent-service.md) | [TR](kb/tr/dc-agent-service.md) |
+| Extension pairing remains pending | [EN](kb/en/extension-pairing.md) | [TR](kb/tr/extension-pairing.md) |
+| Certificate warning | [EN](kb/en/certificate-warning.md) | [TR](kb/tr/certificate-warning.md) |
+| Audit chain is partial | [EN](kb/en/audit-chain-partial.md) | [TR](kb/tr/audit-chain-partial.md) |
+| License is read-only | [EN](kb/en/license-read-only.md) | [TR](kb/tr/license-read-only.md) |
+| External share package fails | [EN](kb/en/external-share-fails.md) | [TR](kb/tr/external-share-fails.md) |
 
-- MSI installation failures.
-- Updates stuck around 76 percent.
-- PassMan DC Agent Service connection issues.
-- Browser extension pairing issues.
-- HTTPS certificate warnings.
-- Partial audit-chain states.
-- License read-only state.
-- External share package failures.
+## Screenshots And Diagrams
 
-## Security and Support Boundaries
+| Visual | What It Shows |
+| --- | --- |
+| ![Overview console](assets/visuals/overview-console.svg) | Security posture, risk actions and vault overview. |
+| ![Browser extension](assets/visuals/extension-demo.svg) | Active-site badge count, autofill and save/update prompts. |
+| ![Active Directory tree](assets/visuals/ad-sync-tree.svg) | OU, group and user scope selection for directory sync. |
+| ![Zero-knowledge flow](assets/visuals/zero-knowledge-flow.svg) | Browser-side unlock and encrypted persistence boundary. |
+| ![Update trust chain](assets/visuals/update-trust-chain.svg) | Signed manifest, SHA-256 and signer-thumbprint verification. |
+| ![Share lifecycle](assets/visuals/share-lifecycle.svg) | Selected-record sharing, expiry, usage limits and local opening. |
 
-Do not upload private keys, signing certificates, database files, environment files, AD bind credentials, agent tokens, license issuer material, customer data, logs or screenshots containing secrets to this repository.
+## Update Trust Model
 
-Installers, ZIP packages, PowerShell scripts and signed manifests belong in GitHub Releases, not in the git tree.
+PassMan-managed updates verify the signed update manifest, release asset metadata, SHA-256 checksums and MSI signer thumbprint before exposing an update in the console.
 
-Useful policies:
+A local PassMan-managed release signer can be accepted by PassMan when the signed manifest pins that signer. A CA-backed or trusted-signing certificate is still recommended for Windows reputation and broad OS-level trust.
 
-- [Security policy](SECURITY.md)
-- [Support policy](SUPPORT.md)
-- [Release notes](RELEASES.md)
+## Public Safety Boundary
 
-## Update Verification
+Never upload or paste these materials into this repository, public issues, comments or support threads:
 
-PassMan-managed updates verify:
+- Plaintext secrets, passwords, share passphrases or vault contents.
+- AD bind passwords, agent tokens, license private keys or update signing private keys.
+- Databases, backups, logs with sensitive values, PFX/P12 files or private keys.
+- Screenshots showing real secret records, users, customer URLs or internal infrastructure.
 
-- Signed update manifest.
-- SHA-256 checksums.
-- Release asset metadata.
-- MSI signer thumbprint.
+Use placeholders such as `<PASSMAN_URL>`, `<SERVER_HOST>`, `<AGENT_ID>`, `<AGENT_TOKEN>` and `<LICENSE_CODE>` in public examples.
 
-PassMan does not require a global CA chain for its own update trust when the signed manifest pins the local release signer. CA-backed or trusted signing is still recommended for Windows reputation and broad OS-level trust.
+## Release Notes
+
+Full release notes are maintained in [RELEASES.md](RELEASES.md). Older public downloads may be retired after their notes are consolidated there. Use the latest release for new installations and updates.
 
 ## Repository Validation
 
@@ -101,4 +152,4 @@ Run before publishing public documentation changes:
 npm run validate
 ```
 
-The validation checks local links, TR/EN doc parity, required visual assets, stale latest-version wording and forbidden secret-like patterns.
+The validation checks local links, TR/EN doc parity, required visual assets, stale latest-version wording, forbidden public-site leftovers and secret-like patterns.

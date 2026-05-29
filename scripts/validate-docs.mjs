@@ -6,8 +6,8 @@ const errors = []
 const warnings = []
 
 const ignoredDirectories = new Set(['.git', 'node_modules'])
-const textExtensions = new Set(['.md', '.html', '.css', '.js', '.mjs', '.json', '.svg', '.yml', '.yaml'])
-const linkFileExtensions = new Set(['.md', '.html'])
+const textExtensions = new Set(['.md', '.mjs', '.json', '.svg', '.yml', '.yaml'])
+const linkFileExtensions = new Set(['.md'])
 
 function walk(directory) {
   const entries = readdirSync(directory, { withFileTypes: true })
@@ -88,7 +88,12 @@ function validateForbiddenPatterns(filePath, content) {
     [/C:\\Users\\ulasc/i, 'local operator path'],
     [/\beset\b/i, 'prior local AD username'],
     [/PassMan-1\.5\.1-x64\.msi/i, 'stale MSI latest asset name'],
-    [/Latest stable release:\s+\*\*PassMan 1\.5\.1\*\*/i, 'stale latest release wording']
+    [/Latest stable release:\s+\*\*PassMan 1\.5\.1\*\*/i, 'stale latest release wording'],
+    [/github\.io\/passman-releases/i, 'obsolete static public-site URL'],
+    [/PASSMAN_[A-Z_]*ADMIN_TOKEN/i, 'obsolete static public-site admin token reference'],
+    [/\.github\/workflows\/[a-z]+\.yml/i, 'obsolete static public-site workflow reference'],
+    [/\]\([^)]*index\.html[)#?]?/i, 'obsolete static public-site html index link'],
+    [/\bassets\/(?:styles\.css|site\.js)\b/i, 'obsolete static public-site asset reference']
   ]
 
   for (const [pattern, label] of forbidden) {
@@ -136,11 +141,12 @@ function validatePairedDocs() {
 
 function validateRequiredFiles() {
   const required = [
-    'index.html',
-    'docs/index.html',
-    'kb/index.html',
-    'assets/styles.css',
-    'assets/site.js',
+    'README.md',
+    'docs/README.md',
+    'kb/README.md',
+    'RELEASES.md',
+    'SECURITY.md',
+    'SUPPORT.md',
     'assets/favicon.svg',
     'assets/visuals/overview-console.svg',
     'assets/visuals/extension-demo.svg',
@@ -148,13 +154,29 @@ function validateRequiredFiles() {
     'assets/visuals/update-trust-chain.svg',
     'assets/visuals/ad-sync-tree.svg',
     'assets/visuals/share-lifecycle.svg',
-    'assets/visuals/social-preview.svg',
-    '.github/workflows/pages.yml'
+    'assets/visuals/social-preview.svg'
   ]
   for (const file of required) {
     const fullPath = path.join(root, file)
     if (!existsSync(fullPath)) {
       fail(`required file is missing: ${file}`)
+    }
+  }
+}
+
+function validateRemovedSiteFiles() {
+  const removed = [
+    ['.github', 'workflows', 'pages.yml'].join('/'),
+    ['.', 'nojekyll'].join(''),
+    'index.html',
+    'docs/index.html',
+    'kb/index.html',
+    ['assets', 'styles.css'].join('/'),
+    ['assets', 'site.js'].join('/')
+  ]
+  for (const file of removed) {
+    if (existsSync(path.join(root, file))) {
+      fail(`obsolete static public-site file must be removed: ${file}`)
     }
   }
 }
@@ -170,12 +192,13 @@ function validateNoLargeReleaseAssets(files) {
 
 const files = walk(root)
 validateRequiredFiles()
+validateRemovedSiteFiles()
 validatePairedDocs()
 validateNoLargeReleaseAssets(files)
 
 for (const file of files) {
   const ext = path.extname(file).toLowerCase()
-  if (!textExtensions.has(ext) && path.basename(file) !== '.gitignore' && path.basename(file) !== '.nojekyll') {
+  if (!textExtensions.has(ext) && path.basename(file) !== '.gitignore') {
     warn(`skipped non-text file: ${relative(file)}`)
     continue
   }
