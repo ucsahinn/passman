@@ -10,6 +10,7 @@ Use this navigator when PassMan is installed but an operator needs a safe diagno
 | Update stays around 76 percent | [Update stuck near 76 percent](update-stuck-76.md) | Update job JSON, MSI signature line and Windows Installer event log. |
 | DC Agent service cannot connect | [DC Agent service troubleshooting](dc-agent-service.md) | Service status, agent log and PassMan URL reachability. |
 | Extension pairing remains pending | [Extension pairing remains pending](extension-pairing.md) | Pairing code state, device row and browser profile mode. |
+| Login creates 401 or 403 noise after unlock | [Login session 401/403 noise](session-401-after-login.md) | Login time, affected endpoint list and whether `/api/auth/me` returns 200. |
 | HTTPS certificate warning | [HTTPS certificate warning](certificate-warning.md) | Hostname, SAN and uploaded certificate package. |
 | Audit chain is partial | [Audit chain is partial or inconsistent](audit-chain-partial.md) | Audit filters, chain status and recent restore/update events. |
 | License is read-only | [License read-only state](license-read-only.md) | License state, plan limits, active users and expiry. |

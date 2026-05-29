@@ -10,6 +10,7 @@ PassMan kurulu olduğu halde operatör hızlı ve güvenli bir teşhis yolu arı
 | Update yüzde 76 civarında kalıyor | [Update yüzde 76 civarında kalıyor](update-stuck-76.md) | Update job JSON, MSI imza satırı ve Windows Installer event log. |
 | DC Agent servisi bağlanmıyor | [DC Agent servis sorunları](dc-agent-service.md) | Servis durumu, agent logu ve PassMan URL erişimi. |
 | Eklenti eşleşmesi pending kalıyor | [Extension eşleşmesi pending kalıyor](extension-pairing.md) | Pairing code durumu, device satırı ve browser profil modu. |
+| Girişten sonra 401 veya 403 log gürültüsü oluşuyor | [Login session 401/403 gürültüsü](session-401-after-login.md) | Login zamanı, etkilenen endpoint listesi ve `/api/auth/me` sonucunun 200 olup olmadığı. |
 | HTTPS sertifika uyarısı | [HTTPS sertifika uyarısı](certificate-warning.md) | Hostname, SAN ve yüklenen sertifika paketi. |
 | Denetim zinciri kısmi | [Denetim zinciri kısmi veya tutarsız](audit-chain-partial.md) | Audit filtreleri, zincir durumu ve son restore/update olayları. |
 | Lisans read-only | [Lisans read-only durumu](license-read-only.md) | Lisans durumu, plan limitleri, aktif kullanıcılar ve bitiş tarihi. |

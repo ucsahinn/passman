@@ -32,11 +32,13 @@ PassMan şunları doğrular:
 
 Güncel public release şunları içerir:
 
-- `PassMan-1.5.3-x64.msi`
+- `PassMan-1.5.5-x64.msi`
 - `passman-update.json`
 - `passman-chromium-extension.zip`
 - `passman-share-decrypter.zip`
 - `passman-ad-agent.ps1`
+
+Manuel doğrulama gerektiğinde kurulumdan veya iç dağıtımdan önce [release asset doğrulama](release-asset-verification.md) sayfasını kullanın.
 
 ## Bileşen Notları
 

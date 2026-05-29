@@ -25,7 +25,7 @@
 </p>
 
 <p align="center">
-  <code>Stable 1.5.3</code>
+  <code>Stable 1.5.5</code>
   &nbsp;
   <code>Windows MSI</code>
   &nbsp;
@@ -46,14 +46,29 @@ Use this repository as the front desk for PassMan. It should answer the first op
 
 | I need to... | Open this | Outcome |
 | --- | --- | --- |
+| Take the shortest safe path from download to first healthy vault | [EN admin quickstart](docs/en/admin-quickstart.md) / [TR hızlı başlangıç](docs/tr/admin-quickstart.md) | Day-0 install, owner, license, HTTPS, 2FA and backup are sequenced. |
+| Run PassMan after go-live | [EN operator runbook](docs/en/operator-runbook.md) / [TR operasyon runbook](docs/tr/operator-runbook.md) | Daily, weekly, monthly and incident routines are clear. |
 | Install PassMan on Windows Server | [EN install](docs/en/install-windows-server.md) / [TR kurulum](docs/tr/install-windows-server.md) | MSI installed, service running, first URL verified. |
 | Create the first owner and apply license | [EN first run](docs/en/first-run-owner-license.md) / [TR ilk kurulum](docs/tr/first-run-owner-license.md) | Owner profile, license state and first vault path are clear. |
 | Configure public host and HTTPS | [EN HTTPS](docs/en/public-host-https-certificate.md) / [TR HTTPS](docs/tr/public-host-https-certificate.md) | Required certificate package and browser validation are understood. |
 | Fix an operational issue | [EN knowledge base](kb/en/README.md) / [TR bilgi bankası](kb/tr/README.md) | Safe evidence and diagnosis path are available. |
-| Update PassMan or verify release assets | [EN Update Center](docs/en/update-center.md) / [TR Güncelleme Merkezi](docs/tr/update-center.md) | Manifest, checksum, MSI signer and component notes are visible. |
+| Update PassMan or verify release assets | [EN release asset verification](docs/en/release-asset-verification.md) / [TR asset doğrulama](docs/tr/release-asset-verification.md) | Manifest, checksum, MSI signer and component notes are verified. |
 | Pair or troubleshoot the browser extension | [EN extension](docs/en/browser-extension.md) / [TR eklenti](docs/tr/browser-extension.md) | Badge count, autofill, save/update login and device pairing behavior are clear. |
 | Sync Active Directory | [EN DC Agent](docs/en/active-directory-agent.md) / [TR DC Agent](docs/tr/active-directory-agent.md) | Service install, repair, logs and OU tree sync are documented. |
 | Open or diagnose external shares | [EN sharing](docs/en/sharing-and-offline-decrypter.md) / [TR paylasim](docs/tr/sharing-and-offline-decrypter.md) | Selected records, files, expiry, max opens and offline decrypter flow are clear. |
+| Prepare a clean support handoff | [EN support evidence pack](docs/en/support-evidence-pack.md) / [TR destek kanıt paketi](docs/tr/support-evidence-pack.md) | Operators know exactly what to collect and what never to send. |
+
+## Enterprise Wiki Map
+
+![PassMan operator lifecycle](assets/visuals/operator-lifecycle.svg)
+
+| Role | Primary path | Decision point |
+| --- | --- | --- |
+| Server administrator | [Quickstart](docs/en/admin-quickstart.md), [installation](docs/en/install-windows-server.md), [public host and HTTPS](docs/en/public-host-https-certificate.md) | Is the Windows service reachable, signed and backed up? |
+| Security owner | [Security model](docs/en/security-and-trust-model.md), [audit posture](docs/en/audit-and-security-posture.md), [release verification](docs/en/release-asset-verification.md) | Are secrets encrypted before storage and are updates trusted by manifest plus hash? |
+| Support engineer | [Support evidence pack](docs/en/support-evidence-pack.md), [troubleshooting](docs/en/troubleshooting.md), [KB](kb/en/README.md) | Can the issue be reproduced with redacted evidence only? |
+| Identity operator | [DC Agent](docs/en/active-directory-agent.md), [extension](docs/en/browser-extension.md), [operator runbook](docs/en/operator-runbook.md) | Are AD sync, browser pairing and user scope healthy? |
+| Turkish operator | [TR hızlı başlangıç](docs/tr/admin-quickstart.md), [TR runbook](docs/tr/operator-runbook.md), [TR bilgi bankası](kb/tr/README.md) | Aynı operasyon yolu Türkçe doküman setinde izlenir. |
 
 ## What This Repository Is
 
@@ -88,7 +103,7 @@ This repository does not contain private source code, license issuer material, u
 
 | Asset | Purpose | Delivery |
 | --- | --- | --- |
-| [PassMan-1.5.3-x64.msi](https://github.com/ucsahinn/passman-releases/releases/latest/download/PassMan-1.5.3-x64.msi) | Installs or upgrades PassMan Server on Windows. | GitHub Release |
+| [PassMan-1.5.5-x64.msi](https://github.com/ucsahinn/passman-releases/releases/latest/download/PassMan-1.5.5-x64.msi) | Installs or upgrades PassMan Server on Windows. | GitHub Release |
 | [passman-update.json](https://github.com/ucsahinn/passman-releases/releases/latest/download/passman-update.json) | Signed update manifest verified by PassMan. | GitHub Release |
 | [passman-chromium-extension.zip](https://github.com/ucsahinn/passman-releases/releases/latest/download/passman-chromium-extension.zip) | Browser extension fallback package. | GitHub Release |
 | [passman-share-decrypter.zip](https://github.com/ucsahinn/passman-releases/releases/latest/download/passman-share-decrypter.zip) | Offline external-share opening tool. | GitHub Release |
@@ -100,7 +115,7 @@ PassMan-managed updates verify the signed manifest, release asset metadata, SHA-
 
 | Component | Version | Update path |
 | --- | ---: | --- |
-| PassMan Enterprise Vault Console | 1.5.3 | Windows MSI / Update Center |
+| PassMan Enterprise Vault Console | 1.5.5 | Windows MSI / Update Center |
 | Chromium Browser Extension | 3.1.8 | Managed rollout or ZIP fallback |
 | Offline Share Decrypter | 1.2.0 | Bundled support component and release ZIP |
 | PassMan DC Agent Service | 1.0.10 | Bundled support component and release script |
@@ -110,17 +125,22 @@ PassMan-managed updates verify the signed manifest, release asset metadata, SHA-
 | Area | English | Turkish |
 | --- | --- | --- |
 | Language home | [EN docs home](docs/en/README.md) | [TR doküman ana sayfa](docs/tr/README.md) |
+| Admin quickstart | [Admin quickstart](docs/en/admin-quickstart.md) | [Yönetici hızlı başlangıç](docs/tr/admin-quickstart.md) |
+| Operator runbook | [Operator runbook](docs/en/operator-runbook.md) | [Operasyon runbook](docs/tr/operator-runbook.md) |
 | Overview | [Overview](docs/en/overview.md) | [Genel bakış](docs/tr/overview.md) |
+| Security model | [Security and trust model](docs/en/security-and-trust-model.md) | [Güvenlik ve güven modeli](docs/tr/security-and-trust-model.md) |
 | Install | [Windows Server installation](docs/en/install-windows-server.md) | [Windows Server kurulumu](docs/tr/install-windows-server.md) |
 | First run and license | [First run, owner and license](docs/en/first-run-owner-license.md) | [İlk kurulum, owner ve lisans](docs/tr/first-run-owner-license.md) |
 | Public host and HTTPS | [Public host and HTTPS](docs/en/public-host-https-certificate.md) | [Public host ve HTTPS](docs/tr/public-host-https-certificate.md) |
 | Update Center | [Update Center](docs/en/update-center.md) | [Güncelleme Merkezi](docs/tr/update-center.md) |
+| Release asset verification | [Release asset verification](docs/en/release-asset-verification.md) | [Release asset doğrulama](docs/tr/release-asset-verification.md) |
 | Browser extension | [Browser extension](docs/en/browser-extension.md) | [Tarayıcı eklentisi](docs/tr/browser-extension.md) |
 | Active Directory agent | [Active Directory agent](docs/en/active-directory-agent.md) | [Active Directory ajanı](docs/tr/active-directory-agent.md) |
 | Sharing and decrypter | [Sharing and offline decrypter](docs/en/sharing-and-offline-decrypter.md) | [Paylaşım ve offline decrypter](docs/tr/sharing-and-offline-decrypter.md) |
 | Backups and restore | [Backups and restore](docs/en/backups-and-restore.md) | [Yedekleme ve geri yükleme](docs/tr/backups-and-restore.md) |
 | Audit and posture | [Audit and security posture](docs/en/audit-and-security-posture.md) | [Denetim ve güvenlik duruşu](docs/tr/audit-and-security-posture.md) |
 | Troubleshooting | [Troubleshooting](docs/en/troubleshooting.md) | [Sorun giderme](docs/tr/troubleshooting.md) |
+| Support evidence pack | [Support evidence pack](docs/en/support-evidence-pack.md) | [Destek kanıt paketi](docs/tr/support-evidence-pack.md) |
 | FAQ | [FAQ](docs/en/faq.md) | [SSS](docs/tr/faq.md) |
 
 ## Knowledge Base Gateway
@@ -135,6 +155,7 @@ PassMan-managed updates verify the signed manifest, release asset metadata, SHA-
 | Audit chain is partial | [EN](kb/en/audit-chain-partial.md) | [TR](kb/tr/audit-chain-partial.md) |
 | License is read-only | [EN](kb/en/license-read-only.md) | [TR](kb/tr/license-read-only.md) |
 | External share package fails | [EN](kb/en/external-share-fails.md) | [TR](kb/tr/external-share-fails.md) |
+| Login creates 401 or 403 noise after unlock | [EN](kb/en/session-401-after-login.md) | [TR](kb/tr/session-401-after-login.md) |
 
 ## Product Walkthrough
 

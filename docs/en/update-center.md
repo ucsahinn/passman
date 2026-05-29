@@ -32,11 +32,13 @@ A global CA chain is not required for PassMan-managed update trust when the sign
 
 The current public release contains:
 
-- `PassMan-1.5.3-x64.msi`
+- `PassMan-1.5.5-x64.msi`
 - `passman-update.json`
 - `passman-chromium-extension.zip`
 - `passman-share-decrypter.zip`
 - `passman-ad-agent.ps1`
+
+For manual verification, use [release asset verification](release-asset-verification.md) before installing or forwarding assets internally.
 
 ## Component Notes
 

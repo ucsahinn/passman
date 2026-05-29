@@ -2,7 +2,7 @@
 
 ## Supported Release
 
-Only the latest public PassMan release is supported for new installations and updates. Older public downloads are retired after their notes are consolidated into `RELEASES.md`.
+Only the latest public PassMan release is supported for new installations and updates. The current supported public release is **PassMan Enterprise Vault Console 1.5.5**. Older public downloads are retired after their notes are consolidated into `RELEASES.md`.
 
 ## Reporting Security Issues
 
@@ -23,3 +23,5 @@ This repository may contain public documentation, public release notes, and GitH
 ## Verification Model
 
 PassMan-managed updates verify a signed manifest, asset SHA-256 hashes, release metadata, and MSI signer thumbprints. A local release signer can be accepted by PassMan when the signed manifest pins that signer. CA-backed or trusted signing is still recommended for Windows reputation.
+
+Use [release asset verification](docs/en/release-asset-verification.md) before manual installation, mirror, or internal redistribution. Use the [security and trust model](docs/en/security-and-trust-model.md) to understand which boundaries PassMan enforces and which controls remain operator-owned.

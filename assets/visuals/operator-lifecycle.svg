@@ -1,0 +1,51 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 420" role="img" aria-label="PassMan operator lifecycle map">
+  <defs>
+    <linearGradient id="bg" x1="0" x2="1" y1="0" y2="1">
+      <stop stop-color="#070a0f"/>
+      <stop offset=".62" stop-color="#101820"/>
+      <stop offset="1" stop-color="#17120b"/>
+    </linearGradient>
+    <linearGradient id="rail" x1="0" x2="1">
+      <stop stop-color="#f0b35c"/>
+      <stop offset=".55" stop-color="#5cc8d7"/>
+      <stop offset="1" stop-color="#8ee3b1"/>
+    </linearGradient>
+  </defs>
+  <rect width="1200" height="420" rx="32" fill="url(#bg)"/>
+  <rect x="34" y="34" width="1132" height="352" rx="26" fill="rgba(255,255,255,.045)" stroke="rgba(255,255,255,.15)"/>
+  <text x="72" y="92" fill="#fff4df" font-family="Segoe UI, Arial, sans-serif" font-size="34" font-weight="800">PassMan Enterprise Wiki</text>
+  <text x="72" y="126" fill="#b8c5cf" font-family="Segoe UI, Arial, sans-serif" font-size="18">Download, install, harden, operate, diagnose and update from one public-safe release hub.</text>
+  <rect x="86" y="214" width="1028" height="10" rx="5" fill="url(#rail)"/>
+  <g font-family="Segoe UI, Arial, sans-serif">
+    <g transform="translate(70 168)">
+      <circle cx="64" cy="51" r="34" fill="#f0b35c"/>
+      <text x="34" y="116" fill="#f7f2e8" font-size="19" font-weight="800">1. Download</text>
+      <text x="24" y="144" fill="#9da8b3" font-size="14">MSI + manifest</text>
+    </g>
+    <g transform="translate(266 168)">
+      <circle cx="64" cy="51" r="34" fill="#24313c" stroke="#f0b35c" stroke-width="3"/>
+      <text x="41" y="116" fill="#f7f2e8" font-size="19" font-weight="800">2. Install</text>
+      <text x="10" y="144" fill="#9da8b3" font-size="14">Windows service</text>
+    </g>
+    <g transform="translate(462 168)">
+      <circle cx="64" cy="51" r="34" fill="#24313c" stroke="#5cc8d7" stroke-width="3"/>
+      <text x="40" y="116" fill="#f7f2e8" font-size="19" font-weight="800">3. Secure</text>
+      <text x="2" y="144" fill="#9da8b3" font-size="14">License, 2FA, HTTPS</text>
+    </g>
+    <g transform="translate(658 168)">
+      <circle cx="64" cy="51" r="34" fill="#24313c" stroke="#8ee3b1" stroke-width="3"/>
+      <text x="36" y="116" fill="#f7f2e8" font-size="19" font-weight="800">4. Operate</text>
+      <text x="1" y="144" fill="#9da8b3" font-size="14">Backups, AD, shares</text>
+    </g>
+    <g transform="translate(854 168)">
+      <circle cx="64" cy="51" r="34" fill="#24313c" stroke="#f0b35c" stroke-width="3"/>
+      <text x="29" y="116" fill="#f7f2e8" font-size="19" font-weight="800">5. Diagnose</text>
+      <text x="9" y="144" fill="#9da8b3" font-size="14">KB + evidence pack</text>
+    </g>
+    <g transform="translate(1030 168)">
+      <circle cx="64" cy="51" r="34" fill="#5cc8d7"/>
+      <text x="39" y="116" fill="#f7f2e8" font-size="19" font-weight="800">6. Update</text>
+      <text x="5" y="144" fill="#9da8b3" font-size="14">Hash + signer trust</text>
+    </g>
+  </g>
+</svg>

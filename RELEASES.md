@@ -1,18 +1,28 @@
 # PassMan Release Notes
 
-Latest public release: **PassMan Enterprise Vault Console 1.5.3**
+Latest public release: **PassMan Enterprise Vault Console 1.5.5**
 
-Release page: https://github.com/ucsahinn/passman-releases/releases/tag/v1.5.3
+Release page: https://github.com/ucsahinn/passman-releases/releases/tag/v1.5.5
 
-## PassMan 1.5.3
+## PassMan 1.5.5
 
-### Console 1.5.3
+### Console 1.5.5
 
-- Supersedes 1.5.2 for Windows MSI upgrades.
-- Hardened major MSI upgrades from older PassMan Server installs where `RemoveExistingProducts` could run before the elevated execute sequence and fail with Windows Installer error `1730` / `1603`.
+- Supersedes 1.5.4 and 1.5.3 for Windows MSI upgrades.
+- Verifies browser session state after login before protected dashboard loaders fan out to secrets, audit, update, users, license, integration, share and extension endpoints.
+- Reduces repeated `401` / `403` noise immediately after unlock by treating stale or not-yet-bound browser sessions as a controlled authentication state instead of an operator incident.
+- Adds public operator guidance for day-0 administration, release asset verification, support evidence collection, trust boundaries and the login-session 401/403 pattern.
 - Keeps the 1.5.x enterprise console scope: dynamic theme engine, executive overview, actionable security posture, selected-record sharing, 15-minute RAM fast unlock, file-backed shares, RBAC, audit, diagnostics, and Update Center polish.
 - Keeps the self-hosted Windows MSI server model with Prisma/SQLite persistence and browser-side vault unlock.
 - SQLCipher remains deferred hardening; sensitive payloads are encrypted before SQLite persistence.
+
+### Release Assets
+
+- `PassMan-1.5.5-x64.msi`
+- `passman-update.json`
+- `passman-chromium-extension.zip`
+- `passman-share-decrypter.zip`
+- `passman-ad-agent.ps1`
 
 ### Chromium Extension 3.1.8
 
@@ -36,8 +46,31 @@ Release page: https://github.com/ucsahinn/passman-releases/releases/tag/v1.5.3
 
 ### Verification Summary
 
-- Lint, TypeScript, Vitest, Next standalone build, extension package, share decrypter package, DC Agent package, UI smoke checks, Windows MSI packaging, Authenticode signing, update manifest issue/verify, and source-focused secret scans passed before publication.
+- Lint, TypeScript, Vitest, Next standalone build, extension package, share decrypter package, DC Agent package, UI smoke checks, Windows MSI packaging, Authenticode signing, update manifest issue/verify, `npm audit`, and source-focused secret scans passed before publication.
 - Local MSI upgrade testing can still require an elevated Windows Installer context on the target machine.
+
+<details>
+<summary>PassMan 1.5.4</summary>
+
+### Console 1.5.4
+
+- Publication and public documentation gateway refresh for the 1.5.x line.
+- No public component package behavior change from 1.5.3.
+- Superseded by 1.5.5 for new installations and updates.
+
+</details>
+
+<details>
+<summary>PassMan 1.5.3</summary>
+
+### Console 1.5.3
+
+- Superseded 1.5.2 for Windows MSI upgrades.
+- Hardened major MSI upgrades from older PassMan Server installs where `RemoveExistingProducts` could run before the elevated execute sequence and fail with Windows Installer error `1730` / `1603`.
+- Kept the self-hosted Windows MSI server model with Prisma/SQLite persistence and browser-side vault unlock.
+- SQLCipher remained deferred hardening; sensitive payloads were encrypted before SQLite persistence.
+
+</details>
 
 <details>
 <summary>PassMan 1.5.2</summary>

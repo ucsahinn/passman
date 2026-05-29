@@ -160,6 +160,7 @@ function validateRequiredFiles() {
     'assets/visuals/update-trust-chain.svg',
     'assets/visuals/ad-sync-tree.svg',
     'assets/visuals/share-lifecycle.svg',
+    'assets/visuals/operator-lifecycle.svg',
     'assets/visuals/social-preview.svg',
     'assets/screenshots/login-lock-screen.png',
     'assets/screenshots/overview-security-posture.png',

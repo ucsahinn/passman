@@ -9,30 +9,38 @@ This folder is the public-safe operator wiki for PassMan Enterprise Vault Consol
 
 ## Operator Lifecycle
 
+![PassMan operator lifecycle](../assets/visuals/operator-lifecycle.svg)
+
 | Stage | English | Turkish |
 | --- | --- | --- |
-| Understand | [Overview](en/overview.md), [FAQ](en/faq.md) | [Genel bakış](tr/overview.md), [SSS](tr/faq.md) |
-| Install | [Windows Server installation](en/install-windows-server.md), [First run, owner and license](en/first-run-owner-license.md) | [Windows Server kurulumu](tr/install-windows-server.md), [İlk kurulum, owner ve lisans](tr/first-run-owner-license.md) |
+| Understand | [Overview](en/overview.md), [FAQ](en/faq.md), [Security and trust model](en/security-and-trust-model.md) | [Genel bakış](tr/overview.md), [SSS](tr/faq.md), [Güvenlik ve güven modeli](tr/security-and-trust-model.md) |
+| Install | [Admin quickstart](en/admin-quickstart.md), [Windows Server installation](en/install-windows-server.md), [First run, owner and license](en/first-run-owner-license.md) | [Yönetici hızlı başlangıç](tr/admin-quickstart.md), [Windows Server kurulumu](tr/install-windows-server.md), [İlk kurulum, owner ve lisans](tr/first-run-owner-license.md) |
 | Publish | [Public host and HTTPS](en/public-host-https-certificate.md), [Browser extension](en/browser-extension.md) | [Public host ve HTTPS](tr/public-host-https-certificate.md), [Tarayıcı eklentisi](tr/browser-extension.md) |
 | Secure | [Audit and security posture](en/audit-and-security-posture.md), [Active Directory agent](en/active-directory-agent.md) | [Denetim ve güvenlik duruşu](tr/audit-and-security-posture.md), [Active Directory ajanı](tr/active-directory-agent.md) |
-| Operate | [Sharing and offline decrypter](en/sharing-and-offline-decrypter.md), [Backups and restore](en/backups-and-restore.md), [Update Center](en/update-center.md) | [Paylaşım ve offline decrypter](tr/sharing-and-offline-decrypter.md), [Yedekleme ve geri yükleme](tr/backups-and-restore.md), [Güncelleme Merkezi](tr/update-center.md) |
-| Diagnose | [Troubleshooting](en/troubleshooting.md), [Knowledge base](../kb/en/README.md), [Support policy](../SUPPORT.md) | [Sorun giderme](tr/troubleshooting.md), [Bilgi bankası](../kb/tr/README.md), [Destek politikası](../SUPPORT.md) |
+| Operate | [Operator runbook](en/operator-runbook.md), [Sharing and offline decrypter](en/sharing-and-offline-decrypter.md), [Backups and restore](en/backups-and-restore.md), [Update Center](en/update-center.md) | [Operasyon runbook](tr/operator-runbook.md), [Paylaşım ve offline decrypter](tr/sharing-and-offline-decrypter.md), [Yedekleme ve geri yükleme](tr/backups-and-restore.md), [Güncelleme Merkezi](tr/update-center.md) |
+| Verify release | [Release asset verification](en/release-asset-verification.md), [Release notes](../RELEASES.md) | [Release asset doğrulama](tr/release-asset-verification.md), [Release notları](../RELEASES.md) |
+| Diagnose | [Support evidence pack](en/support-evidence-pack.md), [Troubleshooting](en/troubleshooting.md), [Knowledge base](../kb/en/README.md), [Support policy](../SUPPORT.md) | [Destek kanıt paketi](tr/support-evidence-pack.md), [Sorun giderme](tr/troubleshooting.md), [Bilgi bankası](../kb/tr/README.md), [Destek politikası](../SUPPORT.md) |
 
 ## Guide Map
 
 | Guide | English | Turkish | Purpose |
 | --- | --- | --- | --- |
 | Overview | [EN](en/overview.md) | [TR](tr/overview.md) | Product model, runtime boundaries and recommended path. |
+| Admin quickstart | [EN](en/admin-quickstart.md) | [TR](tr/admin-quickstart.md) | Day-0 install-to-healthy-vault path with stop conditions. |
 | Windows Server installation | [EN](en/install-windows-server.md) | [TR](tr/install-windows-server.md) | MSI install, service state, port, logs and validation. |
 | First run, owner and license | [EN](en/first-run-owner-license.md) | [TR](tr/first-run-owner-license.md) | Owner profile, license activation and first-run checks. |
 | Public host and HTTPS | [EN](en/public-host-https-certificate.md) | [TR](tr/public-host-https-certificate.md) | Hostname, certificate package upload and browser validation. |
 | Update Center | [EN](en/update-center.md) | [TR](tr/update-center.md) | Signed manifest, MSI updates and component release notes. |
+| Release asset verification | [EN](en/release-asset-verification.md) | [TR](tr/release-asset-verification.md) | Manual release asset, checksum, signer and manifest verification. |
 | Browser extension | [EN](en/browser-extension.md) | [TR](tr/browser-extension.md) | Pairing, badge counts, autofill and save/update prompts. |
 | Active Directory agent | [EN](en/active-directory-agent.md) | [TR](tr/active-directory-agent.md) | PassMan DC Agent Service install, repair, logs and sync tree. |
 | Sharing and offline decrypter | [EN](en/sharing-and-offline-decrypter.md) | [TR](tr/sharing-and-offline-decrypter.md) | Internal sharing, external packages, files, expiry and usage limits. |
 | Backups and restore | [EN](en/backups-and-restore.md) | [TR](tr/backups-and-restore.md) | Encrypted backup export, integrity and restore checks. |
+| Operator runbook | [EN](en/operator-runbook.md) | [TR](tr/operator-runbook.md) | Daily, weekly, monthly and incident operating rhythm. |
 | Audit and security posture | [EN](en/audit-and-security-posture.md) | [TR](tr/audit-and-security-posture.md) | Audit chain, posture score and risk actions. |
+| Security and trust model | [EN](en/security-and-trust-model.md) | [TR](tr/security-and-trust-model.md) | Trust boundaries, zero-knowledge promises and operator responsibilities. |
 | Troubleshooting | [EN](en/troubleshooting.md) | [TR](tr/troubleshooting.md) | Common operational failure states. |
+| Support evidence pack | [EN](en/support-evidence-pack.md) | [TR](tr/support-evidence-pack.md) | Clean, redacted evidence bundle for private support. |
 | FAQ | [EN](en/faq.md) | [TR](tr/faq.md) | Short answers for operators and administrators. |
 
 ## Visual References
