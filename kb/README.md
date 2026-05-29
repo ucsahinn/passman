@@ -1,6 +1,11 @@
-# PassMan Knowledge Base
+# PassMan Knowledge Base Gateway
 
-Redaction-first operational troubleshooting for PassMan Enterprise Vault Console. Use these articles when an operator needs a public-safe diagnosis path without exposing secrets, customer data, license material or local infrastructure.
+This knowledge base is the public-safe incident navigator for PassMan Enterprise Vault Console. It is designed for fast diagnosis without exposing customer data, secret values, license material or local infrastructure.
+
+| Language | Incident navigator |
+| --- | --- |
+| English | [English knowledge base](en/README.md) |
+| Turkish | [Türkçe bilgi bankası](tr/README.md) |
 
 ## Fast Incident Paths
 

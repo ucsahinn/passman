@@ -5,44 +5,65 @@
 <h1 align="center">PassMan Enterprise Vault Console</h1>
 
 <p align="center">
-  <strong>Self-hosted, zero-knowledge secrets vault for Windows Server operations.</strong>
+  <strong>Public product hub, operator documentation, knowledge base and release center for PassMan.</strong>
 </p>
 
 <p align="center">
-  <a href="https://github.com/ucsahinn/passman-releases/releases/latest"><strong>Latest release</strong></a>
-  ·
-  <a href="docs/README.md"><strong>Documentation</strong></a>
-  ·
-  <a href="kb/README.md"><strong>Knowledge base</strong></a>
-  ·
+  <a href="https://github.com/ucsahinn/passman-releases/releases/latest"><strong>Latest Release</strong></a>
+  |
+  <a href="docs/en/README.md"><strong>Docs EN</strong></a>
+  |
+  <a href="docs/tr/README.md"><strong>Docs TR</strong></a>
+  |
+  <a href="kb/en/README.md"><strong>KB EN</strong></a>
+  |
+  <a href="kb/tr/README.md"><strong>KB TR</strong></a>
+  |
   <a href="SECURITY.md"><strong>Security</strong></a>
-  ·
+  |
   <a href="SUPPORT.md"><strong>Support</strong></a>
 </p>
 
 <p align="center">
-  <code>Current stable: 1.5.3</code>
+  <code>Stable 1.5.3</code>
   &nbsp;
-  <code>Server: Windows MSI</code>
+  <code>Windows MSI</code>
   &nbsp;
-  <code>Docs: TR + EN</code>
+  <code>TR + EN</code>
   &nbsp;
-  <code>Source: private</code>
+  <code>Self-hosted</code>
+  &nbsp;
+  <code>Source private</code>
 </p>
 
 ---
 
 ![PassMan security posture dashboard](assets/screenshots/overview-security-posture.png)
 
+## Start Here
+
+Use this repository as the front desk for PassMan. It should answer the first operational question without exposing source code, secrets, signing material or customer data.
+
+| I need to... | Open this | Outcome |
+| --- | --- | --- |
+| Install PassMan on Windows Server | [EN install](docs/en/install-windows-server.md) / [TR kurulum](docs/tr/install-windows-server.md) | MSI installed, service running, first URL verified. |
+| Create the first owner and apply license | [EN first run](docs/en/first-run-owner-license.md) / [TR ilk kurulum](docs/tr/first-run-owner-license.md) | Owner profile, license state and first vault path are clear. |
+| Configure public host and HTTPS | [EN HTTPS](docs/en/public-host-https-certificate.md) / [TR HTTPS](docs/tr/public-host-https-certificate.md) | Required certificate package and browser validation are understood. |
+| Fix an operational issue | [EN knowledge base](kb/en/README.md) / [TR bilgi bankası](kb/tr/README.md) | Safe evidence and diagnosis path are available. |
+| Update PassMan or verify release assets | [EN Update Center](docs/en/update-center.md) / [TR Güncelleme Merkezi](docs/tr/update-center.md) | Manifest, checksum, MSI signer and component notes are visible. |
+| Pair or troubleshoot the browser extension | [EN extension](docs/en/browser-extension.md) / [TR eklenti](docs/tr/browser-extension.md) | Badge count, autofill, save/update login and device pairing behavior are clear. |
+| Sync Active Directory | [EN DC Agent](docs/en/active-directory-agent.md) / [TR DC Agent](docs/tr/active-directory-agent.md) | Service install, repair, logs and OU tree sync are documented. |
+| Open or diagnose external shares | [EN sharing](docs/en/sharing-and-offline-decrypter.md) / [TR paylasim](docs/tr/sharing-and-offline-decrypter.md) | Selected records, files, expiry, max opens and offline decrypter flow are clear. |
+
 ## What This Repository Is
 
-This repository is the public product, documentation, knowledge-base and release hub for PassMan Enterprise Vault Console. It is written for administrators, security operators and licensed customers who need installation guidance, update notes, operational runbooks and support-safe troubleshooting.
+This is the public GitHub home for PassMan Enterprise Vault Console. It contains customer-safe documentation, how-to guides, knowledge-base articles, sanitized product screenshots, release notes and links to GitHub Release assets.
 
-The product source code, private build pipeline, license issuer material and signing keys are intentionally not stored here. Installers and ZIP packages are published through GitHub Releases; this git tree contains only public-safe documentation, diagrams and sanitized screenshots.
+This repository does not contain private source code, license issuer material, update signing private keys, customer data, databases, backups, certificates or release binaries committed into git.
 
 ## Product Snapshot
 
-| Capability | What operators get |
+| Area | Operator value |
 | --- | --- |
 | Enterprise vault console | Passwords, API keys, credentials, secure notes, certificates and file-backed secrets in one self-hosted console. |
 | Zero-knowledge model | Secret payloads are encrypted before storage; unlock material stays in the active browser session. |
@@ -51,6 +72,17 @@ The product source code, private build pipeline, license issuer material and sig
 | Browser extension | Pairing, active-site record count, autofill, save-login and update-login prompts for paired devices. |
 | Directory integration | PassMan DC Agent Service runs as a Windows service and syncs AD OU, group and user metadata. |
 | Operations | Offline licensing, signed updates, backups, diagnostics, HTTPS certificate upload and support-safe logs. |
+
+## Operator Path
+
+1. Download the latest MSI from GitHub Releases.
+2. Install it as Administrator on the approved Windows host.
+3. Open `http://<SERVER_HOST>:1903`, create the owner profile and unlock the vault.
+4. Apply the license and configure public host plus HTTPS.
+5. Enable 2FA, confirm audit-chain health and review the overview action queue.
+6. Pair the Chromium extension for approved browsers.
+7. Configure PassMan DC Agent Service if AD scope is needed.
+8. Review backup, restore, update and support-evidence procedures.
 
 ## Current Release Assets
 
@@ -62,7 +94,7 @@ The product source code, private build pipeline, license issuer material and sig
 | [passman-share-decrypter.zip](https://github.com/ucsahinn/passman-releases/releases/latest/download/passman-share-decrypter.zip) | Offline external-share opening tool. | GitHub Release |
 | [passman-ad-agent.ps1](https://github.com/ucsahinn/passman-releases/releases/latest/download/passman-ad-agent.ps1) | PassMan DC Agent Service installer and repair script. | GitHub Release |
 
-Do not commit release binaries into this repository. Publish installers, archives and scripts as release assets.
+PassMan-managed updates verify the signed manifest, release asset metadata, SHA-256 checksum and MSI signer thumbprint before starting the MSI flow. A global CA chain is not required for PassMan-managed update trust when the signed manifest pins the local release signer thumbprint. CA-backed or trusted-signing certificates remain recommended for Windows reputation and broad OS-level trust.
 
 ## Component Versions
 
@@ -73,52 +105,27 @@ Do not commit release binaries into this repository. Publish installers, archive
 | Offline Share Decrypter | 1.2.0 | Bundled support component and release ZIP |
 | PassMan DC Agent Service | 1.0.10 | Bundled support component and release script |
 
-## Fast Operator Path
+## Documentation Gateway
 
-1. Install the Windows Server MSI as Administrator.
-2. Open `http://<SERVER_HOST>:1903` from a browser.
-3. Create the owner profile, unlock the vault and apply the license.
-4. Configure the public host and upload the required HTTPS certificate package.
-5. Enable 2FA, confirm audit-chain health and review the overview action queue.
-6. Pair the Chromium extension for approved browsers.
-7. Configure the PassMan DC Agent Service if AD scope is needed.
-8. Review backup, restore, update and support evidence procedures.
-
-## Documentation Map
-
-| Guide | Turkish | English |
+| Area | English | Turkish |
 | --- | --- | --- |
-| Overview | [TR](docs/tr/overview.md) | [EN](docs/en/overview.md) |
-| Windows Server installation | [TR](docs/tr/install-windows-server.md) | [EN](docs/en/install-windows-server.md) |
-| First run, owner and license | [TR](docs/tr/first-run-owner-license.md) | [EN](docs/en/first-run-owner-license.md) |
-| Public host and HTTPS | [TR](docs/tr/public-host-https-certificate.md) | [EN](docs/en/public-host-https-certificate.md) |
-| Update Center | [TR](docs/tr/update-center.md) | [EN](docs/en/update-center.md) |
-| Browser extension | [TR](docs/tr/browser-extension.md) | [EN](docs/en/browser-extension.md) |
-| Active Directory agent | [TR](docs/tr/active-directory-agent.md) | [EN](docs/en/active-directory-agent.md) |
-| Sharing and offline decrypter | [TR](docs/tr/sharing-and-offline-decrypter.md) | [EN](docs/en/sharing-and-offline-decrypter.md) |
-| Backups and restore | [TR](docs/tr/backups-and-restore.md) | [EN](docs/en/backups-and-restore.md) |
-| Audit and security posture | [TR](docs/tr/audit-and-security-posture.md) | [EN](docs/en/audit-and-security-posture.md) |
-| Troubleshooting | [TR](docs/tr/troubleshooting.md) | [EN](docs/en/troubleshooting.md) |
-| FAQ | [TR](docs/tr/faq.md) | [EN](docs/en/faq.md) |
+| Language home | [EN docs home](docs/en/README.md) | [TR doküman ana sayfa](docs/tr/README.md) |
+| Overview | [Overview](docs/en/overview.md) | [Genel bakış](docs/tr/overview.md) |
+| Install | [Windows Server installation](docs/en/install-windows-server.md) | [Windows Server kurulumu](docs/tr/install-windows-server.md) |
+| First run and license | [First run, owner and license](docs/en/first-run-owner-license.md) | [İlk kurulum, owner ve lisans](docs/tr/first-run-owner-license.md) |
+| Public host and HTTPS | [Public host and HTTPS](docs/en/public-host-https-certificate.md) | [Public host ve HTTPS](docs/tr/public-host-https-certificate.md) |
+| Update Center | [Update Center](docs/en/update-center.md) | [Güncelleme Merkezi](docs/tr/update-center.md) |
+| Browser extension | [Browser extension](docs/en/browser-extension.md) | [Tarayıcı eklentisi](docs/tr/browser-extension.md) |
+| Active Directory agent | [Active Directory agent](docs/en/active-directory-agent.md) | [Active Directory ajanı](docs/tr/active-directory-agent.md) |
+| Sharing and decrypter | [Sharing and offline decrypter](docs/en/sharing-and-offline-decrypter.md) | [Paylaşım ve offline decrypter](docs/tr/sharing-and-offline-decrypter.md) |
+| Backups and restore | [Backups and restore](docs/en/backups-and-restore.md) | [Yedekleme ve geri yükleme](docs/tr/backups-and-restore.md) |
+| Audit and posture | [Audit and security posture](docs/en/audit-and-security-posture.md) | [Denetim ve güvenlik duruşu](docs/tr/audit-and-security-posture.md) |
+| Troubleshooting | [Troubleshooting](docs/en/troubleshooting.md) | [Sorun giderme](docs/tr/troubleshooting.md) |
+| FAQ | [FAQ](docs/en/faq.md) | [SSS](docs/tr/faq.md) |
 
-## Real Product Screenshots
+## Knowledge Base Gateway
 
-All screenshots below are captured from the actual PassMan application with sanitized demo data.
-
-| Surface | Screenshot |
-| --- | --- |
-| Login / lock screen | ![PassMan login lock screen](assets/screenshots/login-lock-screen.png) |
-| Security posture overview | ![PassMan overview dashboard](assets/screenshots/overview-security-posture.png) |
-| Password record list | ![PassMan password record list](assets/screenshots/passwords-record-list.png) |
-| Sharing package flow | ![PassMan sharing flow](assets/screenshots/sharing-package-flow.png) |
-| Update Center | ![PassMan update center](assets/screenshots/update-center.png) |
-| Browser extension management | ![PassMan browser extension management](assets/screenshots/browser-extension-management.png) |
-| Active Directory sync tree | ![PassMan Active Directory sync tree](assets/screenshots/active-directory-sync-tree.png) |
-| Offline share decrypter | ![PassMan offline share decrypter](assets/screenshots/offline-share-decrypter.png) |
-
-## Knowledge Base
-
-| Incident path | English | Turkish |
+| Incident | English | Turkish |
 | --- | --- | --- |
 | MSI installation fails | [EN](kb/en/msi-installation-fails.md) | [TR](kb/tr/msi-installation-fails.md) |
 | Update stays around 76 percent | [EN](kb/en/update-stuck-76.md) | [TR](kb/tr/update-stuck-76.md) |
@@ -129,9 +136,33 @@ All screenshots below are captured from the actual PassMan application with sani
 | License is read-only | [EN](kb/en/license-read-only.md) | [TR](kb/tr/license-read-only.md) |
 | External share package fails | [EN](kb/en/external-share-fails.md) | [TR](kb/tr/external-share-fails.md) |
 
-## Update Trust Model
+## Product Walkthrough
 
-PassMan-managed updates verify the signed manifest, release asset metadata, SHA-256 checksum and MSI signer thumbprint before starting the MSI flow. A global CA chain is not required for PassMan-managed update trust when the signed manifest pins the local release signer thumbprint. CA-backed or trusted-signing certificates remain recommended for Windows reputation and broad OS-level trust.
+All screenshots are captured from the actual PassMan application with sanitized demo data.
+
+<details open>
+<summary>Core console surfaces</summary>
+
+| Surface | Screenshot |
+| --- | --- |
+| Login / lock screen | ![PassMan login lock screen](assets/screenshots/login-lock-screen.png) |
+| Security posture overview | ![PassMan overview dashboard](assets/screenshots/overview-security-posture.png) |
+| Password record list | ![PassMan password record list](assets/screenshots/passwords-record-list.png) |
+| Sharing package flow | ![PassMan sharing flow](assets/screenshots/sharing-package-flow.png) |
+
+</details>
+
+<details>
+<summary>Operations and support surfaces</summary>
+
+| Surface | Screenshot |
+| --- | --- |
+| Update Center | ![PassMan update center](assets/screenshots/update-center.png) |
+| Browser extension management | ![PassMan browser extension management](assets/screenshots/browser-extension-management.png) |
+| Active Directory sync tree | ![PassMan Active Directory sync tree](assets/screenshots/active-directory-sync-tree.png) |
+| Offline share decrypter | ![PassMan offline share decrypter](assets/screenshots/offline-share-decrypter.png) |
+
+</details>
 
 ## Public Safety Boundary
 
@@ -152,4 +183,4 @@ Run before publishing public documentation changes:
 npm run validate
 ```
 
-The validation checks local links, TR/EN doc parity, required visual assets, required real screenshots, stale release wording, forbidden public-site leftovers, large release binaries and secret-like public patterns.
+The validation checks local links, TR/EN doc parity, required visual assets, real screenshots, stale release wording, forbidden public-site leftovers, large release binaries, secret-like public patterns and encoding artifacts.

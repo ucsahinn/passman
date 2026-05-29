@@ -94,7 +94,8 @@ function validateForbiddenPatterns(filePath, content) {
     [/PASSMAN_[A-Z_]*ADMIN_TOKEN/i, 'obsolete static public-site admin token reference'],
     [/\.github\/workflows\/[a-z]+\.yml/i, 'obsolete static public-site workflow reference'],
     [/\]\([^)]*index\.html[)#?]?/i, 'obsolete static public-site html index link'],
-    [/\bassets\/(?:styles\.css|site\.js)\b/i, 'obsolete static public-site asset reference']
+    [/\bassets\/(?:styles\.css|site\.js)\b/i, 'obsolete static public-site asset reference'],
+    [/[ÃÄÅÂ�]/, 'mojibake or replacement-character encoding artifact']
   ]
 
   for (const [pattern, label] of forbidden) {
@@ -144,7 +145,11 @@ function validateRequiredFiles() {
   const required = [
     'README.md',
     'docs/README.md',
+    'docs/en/README.md',
+    'docs/tr/README.md',
     'kb/README.md',
+    'kb/en/README.md',
+    'kb/tr/README.md',
     'RELEASES.md',
     'SECURITY.md',
     'SUPPORT.md',
