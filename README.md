@@ -25,6 +25,15 @@
 </p>
 
 <p align="center">
+  <a href="https://github.com/ucsahinn/passman-releases/releases/latest"><img alt="Latest PassMan release" src="https://img.shields.io/github/v/release/ucsahinn/passman-releases?label=latest%20release&color=0f766e"></a>
+  <a href="docs/en/README.md"><img alt="Documentation language coverage" src="https://img.shields.io/badge/docs-EN%20%2B%20TR-2563eb"></a>
+  <a href="SECURITY.md"><img alt="Security policy" src="https://img.shields.io/badge/security-public%20policy-b91c1c"></a>
+  <a href="SUPPORT.md"><img alt="Support evidence pack" src="https://img.shields.io/badge/support-evidence%20pack-7c3aed"></a>
+  <img alt="Platform" src="https://img.shields.io/badge/platform-Windows%20MSI-111827">
+  <img alt="Source boundary" src="https://img.shields.io/badge/source-private%20product%20code-475569">
+</p>
+
+<p align="center">
   <code>Stable 1.6.0</code>
   &nbsp;
   <code>Windows MSI</code>
@@ -39,6 +48,28 @@
 ---
 
 ![PassMan security posture dashboard](assets/screenshots/overview-security-posture.png)
+
+## Release Trust Path
+
+![PassMan signed update trust chain](assets/visuals/update-trust-chain.svg)
+
+| Trust signal | Public proof |
+| --- | --- |
+| Release assets stay out of git | MSI, extension ZIP, decrypter ZIP, manifest and agent script are linked from GitHub Releases only. |
+| Update flow is manifest-led | PassMan verifies the signed manifest, release metadata, SHA-256 checksum and MSI signer before update execution. |
+| Source boundary is explicit | This public repository contains docs, sanitized screenshots and release links; private product code and signing material are not published here. |
+| Operator evidence is safe by default | Support paths ask for redacted evidence packs and forbid plaintext secrets, private keys, database files and customer data. |
+| TR/EN docs stay paired | Validation checks paired Turkish and English docs plus local links before publication. |
+
+## Visual Operator Map
+
+| Surface | Why it matters | Visual |
+| --- | --- | --- |
+| Security posture | Shows the first operational health view after unlock. | [overview-security-posture.png](assets/screenshots/overview-security-posture.png) |
+| Update Center | Makes the release verification path visible before operators upgrade. | [update-center.png](assets/screenshots/update-center.png) |
+| Browser extension | Shows pairing, managed browser behavior and extension administration. | [browser-extension-management.png](assets/screenshots/browser-extension-management.png) |
+| Active Directory sync | Documents how AD scope appears without exposing AD password values. | [active-directory-sync-tree.png](assets/screenshots/active-directory-sync-tree.png) |
+| External sharing | Shows selected-record packaging and offline decrypter handoff. | [sharing-package-flow.png](assets/screenshots/sharing-package-flow.png) |
 
 ## Start Here
 

@@ -47,6 +47,12 @@ This folder is the public-safe operator wiki for PassMan Enterprise Vault Consol
 
 | Surface | Asset |
 | --- | --- |
+| Operator lifecycle | [operator-lifecycle.svg](../assets/visuals/operator-lifecycle.svg) |
+| Update trust chain | [update-trust-chain.svg](../assets/visuals/update-trust-chain.svg) |
+| Zero-knowledge flow | [zero-knowledge-flow.svg](../assets/visuals/zero-knowledge-flow.svg) |
+| Browser extension demo | [extension-demo.svg](../assets/visuals/extension-demo.svg) |
+| Active Directory topology | [ad-sync-tree.svg](../assets/visuals/ad-sync-tree.svg) |
+| Share lifecycle | [share-lifecycle.svg](../assets/visuals/share-lifecycle.svg) |
 | Security dashboard | [overview-security-posture.png](../assets/screenshots/overview-security-posture.png) |
 | Secret records | [passwords-record-list.png](../assets/screenshots/passwords-record-list.png) |
 | Sharing lifecycle | [sharing-package-flow.png](../assets/screenshots/sharing-package-flow.png) |
