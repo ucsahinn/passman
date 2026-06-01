@@ -1,8 +1,30 @@
 # PassMan Release Notes
 
-Latest public release: **PassMan Enterprise Vault Console 1.7.0**
+Latest public release: **PassMan Enterprise Vault Console 1.7.2**
 
-Release page: https://github.com/ucsahinn/passman/releases/tag/v1.7.0
+Release page: https://github.com/ucsahinn/passman/releases/tag/v1.7.2
+
+## PassMan 1.7.2
+
+### Console 1.7.2
+
+- Keeps the 1.7 enterprise console UI line and adds the final Enterprise White Teal light-mode polish: topbar about menu, stable sidebar without the PM mark, stronger list/table/card view controls, license generator disclosure removal, and cleaner integrations tabs.
+- Hardens automatic MSI update safety so the in-app silent installer runs only for newer-version server upgrades.
+- Blocks same-version automatic MSI maintenance and unknown-version MSI packages from one-click install; same-version repair stays a manual MSI Repair path on the Windows Server.
+- Keeps signed manifest verification, SHA-256 checks, pinned signer trust, UAC elevation, service restart, running-version health checks, and browser reconnect behavior for valid newer-version upgrades.
+- Separates the 1.7.2 patch release from the 1.7.0 enterprise console release in public release history.
+
+### Release Assets
+
+- `PassMan-1.7.2-x64.msi`
+- `passman-update.json`
+- `passman-chromium-extension.zip`
+- `passman-share-decrypter.zip`
+- `passman-ad-agent.ps1`
+
+### Verification Summary
+
+- Lint, TypeScript, Vitest, Next standalone build, browser UI smoke checks, Windows MSI packaging, dev signing, update manifest issue/verify, MSI scenario verification, npm audit, and pre-commit Gitleaks guard passed before publication.
 
 ## PassMan 1.7.0
 
