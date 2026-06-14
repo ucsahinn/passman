@@ -5,6 +5,16 @@
 </p>
 
 <p align="center">
+  🌐 <strong>Languages:</strong>
+  🇩🇪 Deutsch ·
+  🇪🇸 Español ·
+  <a href="docs/en/README.md">🇬🇧 English</a> ·
+  🇧🇷 Português (Brasil) ·
+  <a href="docs/tr/README.md">🇹🇷 Türkçe</a> ·
+  🇫🇷 French
+</p>
+
+<p align="center">
   <a href="https://github.com/ucsahinn/passman/releases/latest"><strong>Latest Release</strong></a>
   |
   <a href="docs/en/README.md"><strong>Docs EN</strong></a>
